@@ -96,3 +96,6 @@ güncel maksimum skor: 64
 güncel maksimum skor: 128
 güncel maksimum skor: 4
 güncel maksimum skor: 4
+güncel maksimum skor: 2
+güncel maksimum skor: 4
+güncel maksimum skor: 8

@@ -1,10 +1,36 @@
 import random as rnd
 from os import remove
-size =2
+from register import *
+from login import *
+
+size =4
 
 min_skor=0
 max_skor =2
 total_skor = 0
+
+def main():
+    print(f".............OYUNUMUZA HOŞGELDİNİZ............")
+    print(f"{'HESABINIZ VAR MI (R)':<15} ya da {'HESAP OLUŞTURUN (L)':>15}")
+    sonuc =input("hangisi: ")
+    if sonuc=="L" or sonuc=="l":
+        
+        for _ in range(3):
+            sonuc = login.login_control("users.csv")
+            if sonuc == False:
+                print("kullanıcı adı yanlış!")
+            else:
+                return sonuc
+            
+    elif sonuc=="R" or sonuc=="r":
+        register.register("users.csv")
+        print("ARAMIZA HOŞGELDİNN!!\n")
+        return True
+    else :
+        print("hatalı tuşlama")
+        return False
+
+
 def new_board():
     board=[[0]*size for _ in range(size)]
     ad_new_board(board)
@@ -29,7 +55,7 @@ def kayit_güncelleme():
         for satir in file.readlines():
             satir = satir.strip()
             if ":" in satir:
-                yazi ,skor = satir.split(":")
+                _ ,skor = satir.split(":")
                 skor = int(skor)
                 if skor>max_sko:
                     max_sko = skor
@@ -124,30 +150,64 @@ def move_down(board):
     return board
 
 
-board = new_board()
-
-print_board(board)
-
-while True:
-    move = input("Hamle (w=up, s=down, a=left, d=right, q=quit): ")
-    if move == 'q' or ad_new_board(board) =="q":
-        break
-    elif move == 'a':
-        board = move_left(board)
-    elif move == 'd':
-        board = move_right(board)
-    elif move == 'w':
-        board = move_up(board)
-    elif move == 's':
-        board = move_down(board)
-    else:
-        print("Geçersiz hamle!")
-        continue
-
-    ad_new_board(board)
+sonuc = main()
+if sonuc:
+    board = new_board()
     print_board(board)
-    kayit(board)
+    print(f"HOŞGELDİN ÖZLETME FAZLA:) {sonuc['NAME'].upper()}\n")
 
+    while True:
+        move = input("Hamle (w=up, s=down, a=left, d=right, q=quit): ")
+        if move == 'q' or ad_new_board(board) =="q":
+            break
+        elif move == 'a':
+            board = move_left(board)
+        elif move == 'd':
+            board = move_right(board)
+        elif move == 'w':
+            board = move_up(board)
+        elif move == 's':
+            board = move_down(board)
+        else:
+            print("Geçersiz hamle!")
+            continue
+
+        ad_new_board(board)
+        print_board(board)
+        kayit(board)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# board = [(r,c)for r in range(size) for c in range(size) if board[r][c] !=0]
+# print(board)
 # while True:
 #     move = input("w=yukarı,s=aşağı,a=sola,s=sağa")
 #     match move:
@@ -166,11 +226,3 @@ while True:
         
 #     ad_new_board(board)
 #     print_board(board)        
-
-
-
-
-
-
-# board = [(r,c)for r in range(size) for c in range(size) if board[r][c] !=0]
-# print(board)
