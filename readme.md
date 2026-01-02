@@ -12,7 +12,7 @@
     <td>birçok mini oyundan oluşacak bir uygulama, hepsi küçük hızlı oyun</td>
   </tr>
   <tr>
-    <td></td>
+    <td>login-register mantığı entegre edildi ilerde database ile daha da güçlendirilecek</td>
     <td>UI arayüz eklenecek</td>
     <td>oyun mini oyun olarak yayınlanacak ve bir oyun kümesinin mini oyunu olacak</td>
   </tr>
