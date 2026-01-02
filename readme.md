@@ -8,7 +8,7 @@
   </tr>
   <tr>
     <td>oyun kendi içerisinde en yüksek skoru saklayabiliyor</td>
-    <td>biraz daha öğrendikten sonra kayıt sistemi yapılacak</td>
+    <td>✓ (eklendi)biraz daha öğrendikten sonra kayıt sistemi yapılacak</td>
     <td>birçok mini oyundan oluşacak bir uygulama, hepsi küçük hızlı oyun</td>
   </tr>
   <tr>
@@ -18,7 +18,7 @@
   </tr>
   <tr>
     <td></td>
-    <td></td>
+    <td>databaase eklenecek</td>
     <td>Bu oyunların bir kaçı offline olarak oyananabiecek internete bağlı olduğu zaman online açık oyunlar olacak</td>
   </tr>
 </table>
