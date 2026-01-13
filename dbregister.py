@@ -53,7 +53,7 @@ class Register:
         try:
             database = Database.get_connection()
             cursor = database.cursor()
-            sql = "INSERT INTO users (namesurname, username, password, email)OUTPUT INSERTED.user_id VALUES (?, ?, ?, ?)"
+            sql = "INSERT INTO users (namesurname, username, password, email)OUTPUT INSERTED.* VALUES (?, ?, ?, ?)"
         
             values = (self.namesurname,self.username,self.password,self.email)
                 
